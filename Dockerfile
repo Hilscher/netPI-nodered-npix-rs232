@@ -1,0 +1,50 @@
+#use latest armv7hf compatible debian OS version from group resin.io as base image
+FROM resin/armv7hf-debian:jessie
+
+#enable building ARM container on x86 machinery on the web (comment out next line if built on Raspberry) 
+RUN [ "cross-build-start" ]
+
+#labeling
+LABEL maintainer="netpi@hilscher.com" \ 
+      version="V0.9.1.0" \
+      description="Node-RED with rs232 nodes to communicate to NIOT-E-NPIX-RS232 extension module"
+
+#version
+ENV HILSCHERNETPI_NODERED_NPIX_RS232_VERSION 0.9.1.0
+
+#copy files
+COPY "./init.d/*" /etc/init.d/ 
+COPY "./node-red-contrib-npix-rs232/*" "./node-red-contrib-npix-rs232/locales/en-US/*" /tmp/
+
+#do installation
+RUN apt-get update  \
+    && apt-get install curl build-essential \
+#install node.js
+    && curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -  \
+    && apt-get install -y nodejs  \
+#install Node-RED
+    && npm install -g --unsafe-perm node-red \
+#install node
+    && mkdir /usr/lib/node_modules/node-red-contrib-npix-rs232 /usr/lib/node_modules/node-red-contrib-npix-rs232/locales/ /usr/lib/node_modules/node-red-contrib-npix-rs232/locales/en-US \
+    && mv /tmp/25-serial.js /tmp/25-serial.html /tmp/package.json -t /usr/lib/node_modules/node-red-contrib-npix-rs232 \
+    && mv /tmp/25-serial.json /usr/lib/node_modules/node-red-contrib-npix-rs232/locales/en-US \
+    && cd /usr/lib/node_modules/node-red-contrib-npix-rs232 \
+    && npm install --unsafe-perm \
+#clean up
+    && rm -rf /tmp/* \
+    && apt-get remove curl \
+    && apt-get -yqq autoremove \
+    && apt-get -y clean \
+    && rm -rf /var/lib/apt/lists/*
+
+#set the entrypoint
+ENTRYPOINT ["/etc/init.d/entrypoint.sh"]
+
+#Node-RED Port
+EXPOSE 1880
+
+#set STOPSGINAL
+STOPSIGNAL SIGTERM
+
+#stop processing ARM emulation (comment out next line if built on Raspberry)
+RUN [ "cross-build-end" ]
