@@ -48,7 +48,7 @@ Pulling the image from Docker Hub may take up to 5-10 minutes.
 
 #### Accessing
 
-After starting the container open Node-RED in your browser with `http://<netpi's ip address>:<mapped host port>` e.g. `http://192.168.0.1:1880`. Two nodes *serial rs232 (in/out)* in the nodes *netiot* library provides you access to the RS232 interface of the NPIX module. The nodes' info tab in Node-RED explains how to use them.
+After starting the container open Node-RED in your browser with `http://<netpi's ip address>:<mapped host port>` e.g. `http://192.168.0.1:1880`. Two nodes *serial rs232 (in/out)* in the nodes *npix* library palette provides you access to the RS232 interface of the NPIX module. The nodes' info tab in Node-RED explains how to use them.
 
 #### Tags
 
