@@ -6,11 +6,11 @@ RUN [ "cross-build-start" ]
 
 #labeling
 LABEL maintainer="netpi@hilscher.com" \ 
-      version="V0.9.1.1" \
+      version="V0.9.2" \
       description="Node-RED with rs232 nodes to communicate to NIOT-E-NPIX-RS232 extension module"
 
 #version
-ENV HILSCHERNETPI_NODERED_NPIX_RS232_VERSION 0.9.1.1
+ENV HILSCHERNETPI_NODERED_NPIX_RS232_VERSION 0.9.2
 
 #copy files
 COPY "./init.d/*" /etc/init.d/ 
