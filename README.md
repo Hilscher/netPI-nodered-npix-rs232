@@ -1,8 +1,13 @@
-## Node-RED + npix rs232 nodes
+## NPIX-RS232 nodes
+
+[![](https://images.microbadger.com/badges/image/hilschernetpi/netpi-nodered-npix-rs232.svg)](https://microbadger.com/images/hilschernetpi/netpi-nodered-npix-rs232 "NPIX-RS232")
+[![](https://images.microbadger.com/badges/commit/hilschernetpi/netpi-nodered-npix-rs232.svg)](https://microbadger.com/images/hilschernetpi//netpi-nodered-npix-rs232 "NPIX-RS232")
+[![Docker Registry](https://img.shields.io/docker/pulls/hilschernetpi/netpi-nodered-npix-rs232.svg)](https://registry.hub.docker.com/u/hilschernetpi/netpi-nodered-npix-rs232/)&nbsp;
+[![Image last updated](https://img.shields.io/badge/dynamic/json.svg?url=https://api.microbadger.com/v1/images/hilschernetpi/netpi-nodered-npix-rs232&label=Image%20last%20updated&query=$.LastUpdated&colorB=007ec6)](http://microbadger.com/images/hilschernetpi/netpi-nodered-npix-rs232 "Image last updated")&nbsp;
 
 Made for [netPI](https://www.netiot.com/netpi/), the Raspberry Pi 3B Architecture based industrial suited Open Edge Connectivity Ecosystem
 
-### Debian with Node-RED and rs232 nodes for netPI extension module NIOT-E-NPIX-RS232
+### Node-RED and rs232 nodes for netPI's NIOT-E-NPIX-RS232 extension module
 
 The image provided hereunder deploys a container with installed Debian, Node-RED and rs232 nodes to communicate with extension modules NIOT-E-NPIX-RS232.
 
