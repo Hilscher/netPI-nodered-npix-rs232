@@ -31,8 +31,6 @@ The serial port device `/dev/ttyS0` needs to be added to the container. The devi
 
 #### Getting started
 
-#### Getting started
-
 STEP 1. Open netPI's website in your browser (https).
 
 STEP 2. Click the Docker tile to open the [Portainer.io](http://portainer.io/) Docker management user interface.
