@@ -50,7 +50,7 @@ Pulling the image may take a while (5-10mins). Sometimes it may take too long an
 
 #### Accessing
 
-After starting the container open Node-RED in your browser with `http://<netpi's ip address>:<mapped host port>` e.g. `http://192.168.0.1:1880`. Two nodes *serial rs232 (in/out)* in the nodes *npix* library palette provides you access to the RS232 interface of the NPIX module. The nodes' info tab in Node-RED explains how to use them.
+After starting the container open Node-RED in your browser with `http://<netpi's ip address>:<mapped host port>` e.g. `http://192.168.0.1:1880`. Three nodes *serial rs232 (in,out,in/out)* in the nodes *npix* library palette provides you access to the RS232 interface of the NPIX module. The nodes' info tab in Node-RED explains how to use them.
 
 #### Automated build
 
