@@ -14,7 +14,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 RUN [ "cross-build-start" ]
 
 #version
-ENV HILSCHERNETPI_NODERED_NPIX_RS232_VERSION 1.0.0
+ENV HILSCHERNETPI_NODERED_NPIX_RS232_VERSION 1.0.1
 
 #labeling
 LABEL maintainer="netpi@hilscher.com" \ 
